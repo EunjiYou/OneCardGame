@@ -1,0 +1,12 @@
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csprojAssemblyReference.cache
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.Form1.resources
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.Properties.Resources.resources
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.GenerateResource.cache
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.CoreCompileInputs.cache
+D:\C#\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.WinForm.exe
+D:\C#\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.WinForm.pdb
+D:\C#\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.Engine.dll
+D:\C#\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.Engine.pdb
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.CopyComplete
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.exe
+D:\C#\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.pdb

@@ -1,0 +1,9 @@
+D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Console.exe
+D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Console.pdb
+D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.csprojAssemblyReference.cache
+D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.csproj.CoreCompileInputs.cache
+D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.exe
+D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.pdb
+D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Engine.dll
+D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Engine.pdb
+D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.csproj.CopyComplete

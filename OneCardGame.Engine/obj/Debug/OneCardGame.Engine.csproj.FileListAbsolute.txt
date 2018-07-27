@@ -1,0 +1,6 @@
+D:\C#\OneCardGame\OneCardGame.Engine\bin\Debug\OneCardGame.Engine.dll
+D:\C#\OneCardGame\OneCardGame.Engine\bin\Debug\OneCardGame.Engine.pdb
+D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.csprojAssemblyReference.cache
+D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.csproj.CoreCompileInputs.cache
+D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.dll
+D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.pdb
