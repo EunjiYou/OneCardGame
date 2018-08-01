@@ -239,5 +239,8 @@
   <ItemGroup>
     <None Include="Resources\queen_of_spades2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backcard.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

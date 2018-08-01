@@ -7,3 +7,5 @@ D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.pdb
 D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Engine.dll
 D:\C#\OneCardGame\OneCardGame.Console\bin\Debug\OneCardGame.Engine.pdb
 D:\C#\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.csproj.CopyComplete
+D:\github\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.exe
+D:\github\OneCardGame\OneCardGame.Console\obj\Debug\OneCardGame.Console.pdb

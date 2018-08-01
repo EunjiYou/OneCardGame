@@ -28,11 +28,6 @@ namespace OneCardGame.Engine
             cards.Add(new Card(Card.Pattern.Joker, -1));
 
             cards = cards.OrderBy(x => Guid.NewGuid()).ToList();
-
-            //for (int i = 0; i < cards.Count; i++)
-            //{
-            //    System.Console.WriteLine(cards[i].ToText());
-            //}
         }
 
         //보드에 있는 카드를 가져옴

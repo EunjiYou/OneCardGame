@@ -19,7 +19,7 @@ namespace OneCardGame.WinForm
 
             playersNumber = 2;
             playingCardCount = 7;
-            //isPlayCountEnd = false;
+            isInitialPrint = true;
             isChangeAbility = false;
 
             textBox = txtBox;
@@ -31,10 +31,16 @@ namespace OneCardGame.WinForm
             cardLabels[1] = lblCardCnt1;
             cardLabels[2] = lblCardCnt2;
 
+            curCardCountLabels[0] = lblCurCnt0;
+            curCardCountLabels[1] = lblCurCnt1;
+            curCardCountLabels[2] = lblCurCnt2;
+            curCardCountLabels[3] = lblCurCnt3;
+
             directionLabel = lblDir;
             abilityLabel = lblAbility;
             
             fieldImage = ptbField;
+            boardImage = ptbBoard;
             
             cardImages[0] = ptb0;
             cardImages[1] = ptb1;
@@ -150,7 +156,7 @@ namespace OneCardGame.WinForm
         
         int playersNumber;
         int playingCardCount;
-        //bool isPlayCountEnd;
+        bool isInitialPrint;
         bool isChangeAbility;
 
         Dealer dealer = new Dealer();
@@ -181,7 +187,7 @@ namespace OneCardGame.WinForm
                         lblQuestion.Text = "놓을 카드 번호를 입력해주세요.";
                         board.GetFieldCard().SpecialAbility(dealer);
                         dealer.ResetPlayCount();
-                        dealer.SetNextTurn();
+                        GoToNextTurn();
                     }
                     else
                     {
@@ -195,8 +201,6 @@ namespace OneCardGame.WinForm
             }
             else
             { 
-                PrintBoard(board, dealer, players, player);
-
                 str = textBox.Text;
                 if (int.TryParse(str, out num))
                 {
@@ -207,6 +211,9 @@ namespace OneCardGame.WinForm
                             //카드 개수가 0개인지 확인
                             if (!GameIsEnd(players))
                             {
+                                //처음 필드에 올려지는 카드는 능력을 발휘하지 않음
+                                if (isInitialPrint) isInitialPrint = false;
+
                                 //플레이어의 카드를 보드의 필드카드로 보냄
                                 Card card = player.PlayCard(num);
                                 SetCardToField(card, board, dealer);
@@ -226,17 +233,19 @@ namespace OneCardGame.WinForm
                                 }
 
                                 textBox.Clear();
+
                                 if (GameIsEnd(players))
                                 {
-                                    btnOK.Enabled = false;
-                                    btnNew.Enabled = false;
-                                    Player winner = GetWinner(players);
-                                    lblQuestion.Text = "승자 : Player" + player.no.ToString();
+                                    GameEnd(players);
                                 }
-
+                                
                                 if (dealer.GetPlayCount() == 0)
                                 {
-                                    dealer.SetNextTurn();
+                                    GoToNextTurn();
+                                }
+                                else
+                                {
+                                    DrawBoard();
                                 }
                             }
                         }
@@ -259,6 +268,7 @@ namespace OneCardGame.WinForm
             }
         }
 
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             //플레이어가 카드를 새로 받음
@@ -279,17 +289,35 @@ namespace OneCardGame.WinForm
             //카드 수가 초과할 경우를 대비해 확인
             if (GameIsEnd(players))
             {
-                btnOK.Enabled = false;
-                btnNew.Enabled = false;
-                Player winner = GetWinner(players);
-                lblQuestion.Text = "승자 : Player" + player.no.ToString();
+                GameEnd(players);
             }
             else
             {
-                PrintBoard(board, dealer, players, player);
+                GoToNextTurn();
             }
         }
 
+        private void GameEnd(List<Player> players)
+        {
+            DrawBoard();
+            textBox.Enabled = false;
+            btnOK.Enabled = false;
+            btnNew.Enabled = false;
+            Player winner = GetWinner(players);
+            lblQuestion.Text = "승자 : Player" + player.no.ToString();
+        }
+
+        private void GoToNextTurn()
+        {
+            dealer.SetNextTurn();
+            DrawBoard();
+        }
+
+        private void DrawBoard()
+        {
+            player = players[dealer.GetCurrentPlayer()];
+            PrintBoard(board, dealer, players, player);
+        }
 
         private bool IsChangeAbilityCard(Card card)
         {
@@ -342,14 +370,19 @@ namespace OneCardGame.WinForm
         private Label[] playerLabels = new Label[2];
         private Label directionLabel = new Label();
         private Label abilityLabel = new Label();
+        private Label[] curCardCountLabels = new Label[4];
         private PictureBox fieldImage = new PictureBox();
+        private PictureBox boardImage = new PictureBox();
         private PictureBox[] cardImages = new PictureBox[20];
         private Image[] images = new Image[53];
 
         private void PrintBoard(Board board, Dealer dealer, List<Player> players, Player player)
         {
+            boardImage.Image = Resources.backcard;
+
             //특수능력 프린트
-            PrintSpecialCardAbility(board, dealer);
+            if (!isInitialPrint)
+                PrintSpecialCardAbility(board, dealer);
             
             //필드카드 프린트
             cardLabels[2].Text = board.GetBoardCardsAmount().ToString();
@@ -366,15 +399,27 @@ namespace OneCardGame.WinForm
 
                     for (int j = 1; j <= cardImages.Length; j++)
                     {
-                        if(j <= players[i].GetCardAmount())
+                        cardImages[j - 1].Visible = false;
+
+                        if (j <= players[i].GetCardAmount())
                         {
                             cardImages[j-1].Image = FindImage(player.GetCard(j));
                             cardImages[j-1].Visible = true;
+                            cardImages[j-1].BringToFront();
                         }
                         else
                         {
-                            cardImages[j-1].Image = FindImage(new Card(Card.Pattern.Joker, 0));
-                            cardImages[j-1].Visible = false;
+                            cardImages[j - 1].Image = null;
+                        }
+                    }
+
+                    for(int j = 0; j < curCardCountLabels.Length; j++)
+                    {
+                        curCardCountLabels[j].Visible = false;
+
+                        if(j <= (int)(players[i].GetCardAmount()/5))
+                        {
+                            curCardCountLabels[j].Visible = true;
                         }
                     }
                 }
@@ -389,9 +434,7 @@ namespace OneCardGame.WinForm
         private Image FindImage(Card card)
         {
             int num = (int)card.pattern * 13 + card.number;
-
-            num = card.pattern == Card.Pattern.Joker ? num + 1 : num;
-
+            num = card.pattern == Card.Pattern.Joker ? num + 2 : num;
             return images[num-1];
         }
 
