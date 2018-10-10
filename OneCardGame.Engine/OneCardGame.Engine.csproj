@@ -54,5 +54,8 @@
     <Compile Include="ReverseAbility.cs" />
     <Compile Include="TwoAttackAbility.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

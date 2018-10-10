@@ -6,6 +6,7 @@ D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.dll
 D:\C#\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.pdb
 D:\github\OneCardGame\OneCardGame.Engine\bin\Debug\OneCardGame.Engine.dll
 D:\github\OneCardGame\OneCardGame.Engine\bin\Debug\OneCardGame.Engine.pdb
-D:\github\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.csprojResolveAssemblyReference.cache
 D:\github\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.dll
 D:\github\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.pdb
+D:\github\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.csprojAssemblyReference.cache
+D:\github\OneCardGame\OneCardGame.Engine\obj\Debug\OneCardGame.Engine.csproj.CoreCompileInputs.cache

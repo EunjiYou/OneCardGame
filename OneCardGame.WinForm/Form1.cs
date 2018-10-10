@@ -304,7 +304,7 @@ namespace OneCardGame.WinForm
             btnOK.Enabled = false;
             btnNew.Enabled = false;
             Player winner = GetWinner(players);
-            lblQuestion.Text = "승자 : Player" + player.no.ToString();
+            lblQuestion.Text = "승자 : Player" + winner.no.ToString();
         }
 
         private void GoToNextTurn()
@@ -343,7 +343,7 @@ namespace OneCardGame.WinForm
 
         private Player GetWinner(List<Player> players)
         {
-            if (players[0].GetCardAmount() < players[1].GetCardAmount())
+            if (players[0].GetCardAmount() == 0)
             {
                 return players[0];
             }

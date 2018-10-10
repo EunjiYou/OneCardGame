@@ -16,7 +16,9 @@ D:\github\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.WinForm.exe
 D:\github\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.WinForm.pdb
 D:\github\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.Engine.dll
 D:\github\OneCardGame\OneCardGame.WinForm\bin\Debug\OneCardGame.Engine.pdb
-D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csprojResolveAssemblyReference.cache
 D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.Form1.resources
 D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.Properties.Resources.resources
 D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.GenerateResource.Cache
+D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csprojAssemblyReference.cache
+D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.CoreCompileInputs.cache
+D:\github\OneCardGame\OneCardGame.WinForm\obj\Debug\OneCardGame.WinForm.csproj.CopyComplete
