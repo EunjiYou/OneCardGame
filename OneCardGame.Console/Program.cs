@@ -217,6 +217,7 @@ namespace OneCardGame.Console
 
         private static void PrintBoard(Board board, Dealer dealer, List<Player> players, Player player)
         {
+            System.Console.Clear();
             //보드 상황을 프린트해주는 함수
             System.Console.WriteLine();
             //최상단은 특수능력이 발동될때마다 프린트를 다르게 해줌  
